@@ -1,0 +1,10 @@
+.logo{
+  width: 290px;
+  height: 60px ;
+  
+  position: fixed;
+  top: 10px;
+  left: 10px;
+
+  margin-bottom: 200px;
+}

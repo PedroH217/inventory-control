@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Home</title>{% endblock %}
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">{% endblock %}
+
+{% block content %}
+  <div class="button-group">
+    <form method="POST" action="{{ url_for('insert') }}">
+      <button class="insert-button">Insert</button>
+    </form>
+
+    <form method="POST" action="{{ url_for('products') }}">
+      <button class="products-button">Products</button>
+    </form>
+  </div>
+{% endblock %}

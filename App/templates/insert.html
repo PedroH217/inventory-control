@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Insert</title>{% endblock %}
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/insert.css') }}">{% endblock %}
+
+
+{% block content %}
+
+<form action="/insert" method="POST">
+
+	<label for="produto">Product:</label>
+	<input type="text" id="product" name="product"><br><br>
+	
+	<label for="produto">Price:</label>
+	<input type="text" id="price" name="price"><br><br>
+
+	<label for="produto">Amount:</label>
+	<input type="text" id="amount" name="amount"><br><br>
+
+	<input type="submit" value="Enviar">
+
+	<div class="msg">
+	{% if msg %}
+		<h1>{{msg}}</h1>
+	{% else %}
+		<h1>Enter the value and price of the product...</h1>
+	{% endif %}
+	</div>
+
+</form>
+
+{% endblock %}

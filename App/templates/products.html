@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Products</title>{% endblock %}
+{% block style %}<link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">{% endblock %}
+
+
+{% block content %}
+
+  {% if dct %}
+    <h1>Product List</h1>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Price (R$)</th>
+            <th>Amount</th>
+            <th>Tick Box</th>
+        </tr>
+        {% for product, lst in dct.items() %}
+        <tr>
+            <td>{{ product }}</td>
+            <td>{{ lst[0] }}</td>
+            <td>{{ lst[1] }}</td>
+        <form method="POST" action="{{ url_for('products') }}">     
+          <td><input type="checkbox" name="{{ product }}" {% if lst[2] %}checked{% endif %}> </td>
+
+        </tr>
+        {% endfor %}
+        
+        
+          <input type="submit" value="Excluir">
+        </form>      
+    </table>
+  
+  {% endif %}
+
+{% endblock %}
