@@ -19,23 +19,22 @@ def insert():
     
     if product or (product or amount) == '':
         try:
+            if (product == '') or (price == '') or (amount == ''):
+                raise ValueError(f'No field cannot be empty!') 
             # Validating the Product
-            if product.isnumeric():
-                raise ValueError(f'{product} is not a valid Product Name!')
-            
-            elif product == '':
-                raise ValueError(f'Product field cannot be empty!')    
+            elif product.isnumeric():
+                raise ValueError(f'{product} is not a valid Product Name!')   
             
             # Validating the Price
-            elif price == '':
-                raise ValueError(f'Price field cannot be empty!')
+            # elif price == '':
+            #     raise ValueError(f'Price field cannot be empty!')
             
             elif not val.validate_price(price):
                 raise ValueError(f'{price} not a valid Price for the product{product}!')
             
             # Validating the Price
-            elif amount == '':
-                raise ValueError(f'The quantity field cannot be empty!')
+            # elif amount == '':
+            #     raise ValueError(f'The quantity field cannot be empty!')
             
             elif not amount.isnumeric():
                 raise ValueError(f'The amount field must only contain numbers!')
